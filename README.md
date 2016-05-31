@@ -82,7 +82,12 @@ and you should place the queries in 'dss/queries' dir.
 Now you should have 44 files in the dss/queries directory. 22 of them will
 actually run the queries and the other 22 will generate EXPLAIN plan of
 the query (without actually running it).
-
+    
+    I found that ":o" and ":x" are not suportted so delete them first.
+    for q in `seq 1 22`
+    do
+        `ls *.sql`; do sed -i -e "s/:o//" -e "s/:x//" $q;
+    done
 
 Running the benchmark
 ---------------------
